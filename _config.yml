@@ -18,7 +18,7 @@ tagline:             초보개발자 블로그
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  남에게 항상 필요한 개발자
+  남에게 항상 필요한 사람이 되자
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
@@ -26,7 +26,7 @@ author:
   email:             hanyonghee9264@gmail.com
 
 # Fallback image and color
-image:               /assets/img/coding.jpg
+image:               /assets/img/moon.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
