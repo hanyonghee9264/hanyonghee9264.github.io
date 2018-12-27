@@ -1,7 +1,7 @@
 # The primary author of this blog.
 # Must be the same as `author` in `_config.yml`.
 # Change `qwtel` to your shortname (used in the front matter to set a page's author, e.g. `author: qwtel`).
-ahyeeonway:
+Dev_Yong:
   name:              yonghee Han
   email:             hanyonghee9264@gmail.com
 
@@ -47,7 +47,7 @@ ahyeeonway:
     # pinterest:       <username>
     # foursquare:      <number>
     # yelp:            <string>
-    github:          https://hanyonghee9264.github.io
+    github:          https://github.com/hanyonghee9264
     # stackoverflow:   <number/username>
     # npm:             <username>
     # hackernews:      <username>
