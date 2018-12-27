@@ -9,4 +9,4 @@ order: 10
 
 ## 프로젝트
 
-- [인스타그램](https://github.com/ahyeonway/instagram) - Django로 인스타그램 만들기
+- [배달플라이](https://github.com/hanyonghee9264/TeamProject_FoodFly) - 패스트캠퍼스 팀 프로젝트
