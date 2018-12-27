@@ -26,7 +26,7 @@ author:
   email:             hanyonghee9264@gmail.com
 
 # Fallback image and color
-image:               /assets/img/cosmos.jpg
+image:               /assets/img/coding.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
