@@ -1,0 +1,121 @@
+<blockquote>
+  <p>본 포스팅은 <strong><code class="highlighter-rouge">파이썬코딩의기술</code></strong> 이라는 책을 참고하여 <strong>개인 공부</strong>를 하면서 정리하고 있습니다.</p>
+
+  <p>문제 될 시 삭제하겠습니다.</p>
+</blockquote>
+
+<h1 id="chapter-1">Chapter 1</h1>
+<h3 id="5-시퀀스를-슬라이스하는-방법을-알자">5. 시퀀스를 슬라이스하는 방법을 알자</h3>
+<ul>
+  <li>파이썬은 시퀀스를 <code class="highlighter-rouge">슬라이스(slice:자르기)</code>해서 조각으로 만드는 문법 제공</li>
+  <li>최소한의 노력으로 시퀀스 아이템의 <code class="highlighter-rouge">부분집합(subset)</code>에 접근’</li>
+  <li><code class="highlighter-rouge">list</code>, <code class="highlighter-rouge">str</code>, <code class="highlighter-rouge">bytes</code></li>
+  <li>기본형태는 <code class="highlighter-rouge">somelist[start:end]</code>, start인덱스는 포함, end는 제외
+    <ul>
+      <li>즉, start는 이상 end는 미만</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'First four:'</span><span class="p">,</span> <span class="n">a</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Last four:'</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Middle two:'</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+<span class="n">First</span> <span class="n">four</span><span class="p">:</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">]</span>
+<span class="n">Last</span> <span class="n">four</span><span class="p">:</span> <span class="p">[</span><span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+<span class="n">Middle</span> <span class="n">two</span><span class="p">:</span> <span class="p">[</span><span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">]</span>
+
+<span class="c1"># 리스트를 슬라이스할 때 인덱스 0을 생략
+</span><span class="k">assert</span> <span class="n">a</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># 리스트의 끝까지 슬라이스할 때도 마지막 인덱스 생략
+</span><span class="k">assert</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="o">==</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
+
+<span class="c1"># 리스트의 끝을 기준으로 오프셋을 계산할 때는 음수로 슬라이스 하는게 편함
+</span><span class="n">a</span><span class="p">[:]</span>		<span class="c1"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+</span><span class="n">a</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>		<span class="c1"># ['a', 'b', 'c', 'd', 'e']
+</span><span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>		<span class="c1"># ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+</span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>		<span class="c1"># 		      ['e', 'f', 'g', 'h']
+</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>		<span class="c1">#			    ['f', 'g', 'h']
+</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>		<span class="c1">#	    ['c', 'd', 'e']
+</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>		<span class="c1">#	    ['c', 'd', 'e', 'f', 'g']
+</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>	<span class="c1">#		    	    ['f', 'g']
+</span>
+<span class="c1"># 슬라이싱은 start와 end 인덱스가 경계를 벗어나도 적절하게 처리해줌
+</span><span class="n">first_twenty_items</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>	<span class="c1"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+</span><span class="n">last_twenty_items</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>	<span class="c1"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+</span>
+<span class="c1"># 하지만 인덱스를 직접 접근하면 예외 발생
+</span><span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+<span class="nb">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+
+<span class="c1"># 슬라이싱의 결과는 새로운 리스트 반환
+# 원본리스트에 들어 있는 객체에 대한 참조는 유지됨
+# 슬라이싱 결과를 수정해도 원본 리스트에는 아무런 영향 없음
+</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before:		'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After:		'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'No change:	'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+<span class="n">Before</span><span class="p">:</span>		<span class="p">[</span><span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+<span class="n">After</span><span class="p">:</span>		<span class="p">[</span><span class="s">'e'</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+<span class="n">No</span> <span class="n">change</span><span class="p">:</span>	<span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+
+<span class="c1"># a, b = c[:2] 같은 튜플 할당과 달리 슬라이스 할당의 길이는 달라도 됨
+# 슬라이스의 앞, 뒤 값은 유지 되며, 새로 들어온 값에 맞춰 늘어나거나 줄어듬
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Before '</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After '</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+<span class="n">Before</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+<span class="n">After</span>  <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+
+<span class="c1"># 시작과 끝 인덱스를 모두 생략하고 슬라이스하면 원본 리스트의 복사본을 가짐
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="k">assert</span> <span class="n">b</span> <span class="o">==</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span>
+
+<span class="c1"># 슬라이스에 시작과 끝 인덱스를 지정하지 않고 할당하면
+# 슬라이스의 전체 내용을 참조 대상의 복사본으로 대체함
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>		<span class="c1"># 여전히 같은 리스트 객체
+</span><span class="k">print</span><span class="p">(</span><span class="s">'After'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>	<span class="c1"># 이제 다른 내용을 담음
+</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="n">Before</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]</span>
+<span class="n">After</span>  <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">]</span>
+
+</code></pre></div></div>
+<blockquote>
+  <p>예를 들어 somelist[-n:]이라는 구문은 somelist[-3:] 처럼 n이 1보다 클 때는 제대로 작동함</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>그러나</strong> n이 0이어서 somelist[-0:]이 되면 원본 리스트의 복사본 생성</p>
+</blockquote>
+
+<hr />
+
+<p><strong>정리</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">start</code> 인덱스에 0을 설정하거나 <code class="highlighter-rouge">end</code> 인덱스에 시퀀스의 길이를 설정하지 말자
+    <ul>
+      <li>a[0:5]  =&gt; a[:5]</li>
+      <li>a[5:len(a)] =&gt; a[5:]</li>
+    </ul>
+  </li>
+  <li>슬라이싱은 범위를 벗어난 <code class="highlighter-rouge">start</code>나<code class="highlighter-rouge">end</code> 허용</li>
+  <li><code class="highlighter-rouge">list</code>슬라이스에 할당하면 원본 시퀀스에 지정한 범위를 참조 대상의 내용으로 대체
+(<strong>이 때, 길이가 달라도 동작함</strong>)</li>
+</ul>
