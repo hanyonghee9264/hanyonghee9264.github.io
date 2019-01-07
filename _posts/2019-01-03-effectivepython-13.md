@@ -2,8 +2,8 @@
 layout: post
 title:  "[Python Chapter1 13]"
 subtitle:   "13. try/except/else/finally에서 각 블록의 장점을 이용"
-categories: language
-tags: python
+categories: python
+tags: effectivepython
 comments: true
 ---
 > 본 포스팅은 **`파이썬코딩의기술`** 이라는 책을 참고하여 **개인 공부**를 하면서 정리하고 있습니다.

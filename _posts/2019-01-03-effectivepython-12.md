@@ -2,8 +2,8 @@
 layout: post
 title:  "[Python Chapter1 12]"
 subtitle:   "12. for와 while 루프 뒤에는 else 블록을 쓰지 말자"
-categories: language
-tags: python
+categories: python
+tags: effectivepython
 comments: true
 ---
 > 본 포스팅은 **`파이썬코딩의기술`** 이라는 책을 참고하여 **개인 공부**를 하면서 정리하고 있습니다.

@@ -2,8 +2,8 @@
 layout: post
 title:  "[Python Chapter1 04]"
 subtitle:   "04. 복잡한 표현식 대신 헬퍼 함수 작성"
-categories: language
-tags: python
+categories: python
+tags: effectivepython
 comments: true
 ---
 > 본 포스팅은 **`파이썬코딩의기술`** 이라는 책을 참고하여 **개인 공부**를 하면서 정리하고 있습니다.
@@ -70,7 +70,7 @@ if green[0]:
 	green = int(green[0])
 else:
 	green = 0
-	
+
 # 이 로직을 반복해서 사용해야 한다면 헬퍼 함수를 만드는게 좋음
 def get_first_int(values, key, default=0):
 	found = values.get(key, [''])

@@ -2,8 +2,8 @@
 layout: post
 title:  "[Python Chapter2 14]"
 subtitle:   "14. None을 반환하기보다는 예외를 일으키자"
-categories: language
-tags: python
+categories: python
+tags: effectivepython
 comments: true
 ---
 > 본 포스팅은 **`파이썬코딩의기술`** 이라는 책을 참고하여 **개인 공부**를 하면서 정리하고 있습니다.
