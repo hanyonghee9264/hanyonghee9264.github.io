@@ -1,15 +1,18 @@
-## MacOS
-*.DS_Store
+*.gem
 .bundle
 .sass-cache
-node_modules
-package.json
-
-## Jekyll stuff
-/_site/
-_site/
-.sass-cache/
-.jekyll-metadata
-.jekyll
-Gemfile
+_site
 Gemfile.lock
+
+Thumbs.db
+.DS_Store
+
+.rbenv-version
+.rvmrc
+/node_modules
+/yarn-error.log
+yarn.lock
+
+# Ignore Yard Doc
+/doc
+.yardoc/
