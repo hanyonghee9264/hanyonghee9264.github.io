@@ -6,9 +6,138 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Jan 2019 18:47:21 +0900</pubDate>
-    <lastBuildDate>Mon, 07 Jan 2019 18:47:21 +0900</lastBuildDate>
+    <pubDate>Mon, 07 Jan 2019 19:05:35 +0900</pubDate>
+    <lastBuildDate>Mon, 07 Jan 2019 19:05:35 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>[ComputerScience bootcamp with python 1장]</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;본 포스팅은 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;컴퓨터사이언스 부트캠프 with 파이썬&lt;/code&gt;&lt;/strong&gt; 이라는 책을 참고하여 &lt;strong&gt;개인 공부&lt;/strong&gt;를 하면서 정리하고 있습니다.&lt;/p&gt;
+
+  &lt;p&gt;문제 될 시 삭제하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;chapter-1-변수&quot;&gt;Chapter 1 변수&lt;/h1&gt;
+&lt;h3 id=&quot;1-메모리-미리보기&quot;&gt;1. 메모리 미리보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변수(variable)나 참조(reference)의 개념을 명확히 이해하려면 메모리부터 이해&lt;/li&gt;
+  &lt;li&gt;컴퓨터는 1과 0으로 이루어진 데이터를 처리
+    &lt;ul&gt;
+      &lt;li&gt;1과 0을 표현할 수 있는 데이터 단위 비트(bit)&lt;/li&gt;
+      &lt;li&gt;비트가 여덟 개 모이면 바이트(byte)&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;1바이트는? 01011010 8개&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기가바이트는 &lt;code class=&quot;highlighter-rouge&quot;&gt;1,024x1,024x1,024 = 1,073,741,824&lt;/code&gt; 바이트 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;11-32비트와-64비트의-의미&quot;&gt;1.1 32비트와 64비트의 의미&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컴퓨터는 데이터 단위로 비트를 사용&lt;/li&gt;
+  &lt;li&gt;데이터를 한 번에 몇개 보낼 수 있는지를 나타내는 지표가 &lt;strong&gt;32비트&lt;/strong&gt;와 &lt;strong&gt;64비트&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;비트 수가 높을수록 한 번에 전송할 수 있는 데이터 양이 많아짐
+    &lt;ul&gt;
+      &lt;li&gt;한 번에 데이터를 보낼 수 있는 데이터 갯수?&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;32비트면 32비트 컴퓨터, 64비트면 64비트 컴퓨터&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터 메모리 주소&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;32비트 컴퓨터면 32비트로 표현, 64비트 컴퓨터면 64비트로 표현&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;12-메모리에-우편번호를-매긴다&quot;&gt;1.2 메모리에 우편번호를 매긴다&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;여기서 잠깐&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우편번호란?&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;우리나라 땅을 다섯 자릿수로 표현&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;예를 들면 한 구역을 15235 형태로 나타냈을 때
+        &lt;ul&gt;
+          &lt;li&gt;아파트 한 채의 한 호(B동 1234호처럼) 까지는 나타낼 수 없음&lt;/li&gt;
+          &lt;li&gt;그치만 어느 동에 있는 어느 아파트인지는 구분 가능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;그렇다면 다섯 자릿수 우편번호로는 주소를 몇 개까지 나타낼 수 있을까?
+        &lt;ul&gt;
+          &lt;li&gt;다섯 자릿수이므로 10^5 즉, 00000 ~ 99999 구역을 총 100,000개 까지 나타낼 수 있음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;이제 메모리를 우리나라라고 생각해 보면?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컴퓨터는 0과 1밖에 모르기 때문에 2진수로 나타내야 함&lt;/li&gt;
+  &lt;li&gt;메모리 주소 한 개는 메모리에서 1바이트(8비트)를 가리킴
+    &lt;ul&gt;
+      &lt;li&gt;2진수 여덟 개로 메모리 주소를 표현 =&amp;gt; 8비트 컴퓨터&lt;/li&gt;
+      &lt;li&gt;32비트 컴퓨터라면 하나의 주소를 나타내면? 2진수 서른두 자릿수를 사용&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;그러므로 32비트에서 나타낼 수 있는 주소 개수는 2^32(=4,294,967,296)개&lt;/p&gt;
+
+      &lt;p&gt;이것은 4,294,967,296 바이트는 4x1,024x1,024x1,024 바이트로 풀어 쓸 수 있음&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1,024 바이트는 &lt;strong&gt;1KB&lt;/strong&gt;, 1,024x1,024바이트는 &lt;strong&gt;1MB&lt;/strong&gt;, 1,024x1,024x1,024바이트는 &lt;strong&gt;1GB&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt; KB = 2^10 = 1,024, MB = 2^10x2^10 = 1,048,576, GB = 2^10x2^10x2^10 = 1,073,741,824&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;32비트로는 총 4GB 메모리를 가리킬 수 있음
+    &lt;ul&gt;
+      &lt;li&gt;이것이 바로 32비트 컴퓨터에서 4GB보다 큰 메모리가 무용지물인 이유&lt;/li&gt;
+      &lt;li&gt;32비트가 주류였던 과거에 4GB 메모리에 추가로 4GB 메모리를 더 설치해도 메모리 주소를 배정받지 못했음&lt;/li&gt;
+      &lt;li&gt;64비트 컴퓨터는 이론으론 2^64=(18,446,744,073,709,551,616)바이트이므로 훨씬더 큰 램을 설치해도 무방&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 07 Jan 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2019/01/07/bootcamppython1-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2019/01/07/bootcamppython1-1/</guid>
+        
+        <category>bootcamppython</category>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>[Python Chapter2 14]</title>
