@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Python
-slug: python
+title: ETC
+slug: ETC
 menu: true
-submenu: true
-order: 5
+submenu: false
+order: 8
 description: >
-  파이썬 공부 자료
+  기타 자료 및 삽질
 ---

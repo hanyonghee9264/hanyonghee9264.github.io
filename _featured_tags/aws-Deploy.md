@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: EC2
-slug: ec2
+title: Deploy
+slug: deploy
 category: aws
 menu: false
 order: 2
