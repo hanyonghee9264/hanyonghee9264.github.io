@@ -22,3 +22,25 @@ comments: true
 > 해결하기 위해 rabbitmq 를 실행
 >
 > 즉, redis-server가 켜져있는 상태에서 celery 구동
+
+### RabbitMQ
+> Mac OS
+
+`brew install rabbitmq`
+
+Homebrew는 `/usr/local/sbin`에 `RabbitMQ` 설치
+
+설치 후 환경변수 `PATH`에 추가
+
+
+```
+# zsh 사용 ~/.zshrc
+PATH=$PATH:/usr/local/sbin
+```
+**여기서 잠깐**
+
+- Mac OS 버전에 따라 설치 경로가 다르다는 점
+
+- **RabbitMQ 설치 시 sbin 디렉토리 없음** >> [링크 클릭](https://kimdoky.github.io/tip/2019/01/21/tip-rabbitmq-install-error.html){: target="_blank" }
+
+> 위 블로그를 참고 한 후 문제 해결
