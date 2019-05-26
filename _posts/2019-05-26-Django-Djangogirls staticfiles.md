@@ -30,9 +30,9 @@ request -> runserver -> (Django) -> urlresolver(config.urls)
 request(url) -> urlresolver -> (resolve) -> view function
 
 # ex) /blog-posts/
-	-> urls
-		r'^blog-posts/$'
-			-> view (post_list)
+#	-> urls
+#		r'^blog-posts/$'
+#			-> view (post_list)
 ```
 
 - URL reverse
@@ -41,8 +41,8 @@ request(url) -> urlresolver -> (resolve) -> view function
 template -> {% url '<url name>' %} -> (reverse) -> url
 
 # ex) {% url 'post-list' %}
-	-> urls
-		name='post-list'
-		r'^/blog-posts/$'
-			-> /blog-posts/
+#	-> urls
+#		name='post-list'
+#		r'^/blog-posts/$'
+#			-> /blog-posts/
 ```
