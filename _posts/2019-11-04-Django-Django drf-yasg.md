@@ -15,8 +15,15 @@ comments: true
 
 	> 이전의 `gitbook`은 일일이 작성해야하는 번거로움
 
+- `View`마다 설정된 `serializer`로 **request / response schema** 생성
+
 - `django restframework`에 다양한 자동 문서화 도구가 있음
 	- 그 중 최근 공모전을 통해 팀원 분을 통해 새로 알게 되어 정리하자
+
+> 한계
+>
+> - read_only, write_only 인식 못함
+> - serializer를 쓰지 않는 경우 직접 써줘야 하는게 많음
 
 ### 패키지 설치
 
