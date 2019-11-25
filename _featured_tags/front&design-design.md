@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Frontend
-slug: front
+title: Design
+slug: design
 category: front&design
 menu: false
-order: 1
+order: 2
 ---
