@@ -13,7 +13,7 @@ url:                 "https://hanyonghee9264.github.io"
 baseurl:             ""
 
 # A very short description of your page
-tagline:             초보개발자 블로그
+tagline:             디자인&개발 개인공부 블로그
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
